@@ -1,0 +1,54 @@
+﻿@model IEnumerable<IepProject0.Models.TokenOder>
+@using PagedList.Mvc;
+@using PagedList;
+@using IepProject0.Models;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "TokenOrders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Token Orders</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TokensAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Currency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {//SOS TESTIRAJ STRANICE DAL RADE.
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TokensAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Currency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+        </tr>
+    }
+</table>
+@if (((IPagedList<TokenOders>)Model).PageSize == 0)
+{
+    <h2> There is no auctions right now! </h2>
+}
+Page @(((IPagedList<TokenOders>)Model).PageCount < ((IPagedList<TokenOders>)Model).PageNumber ? 0 : ((IPagedList<TokenOders>)Model).PageNumber) of @(((IPagedList<TokenOders>)Model).PageCount)
+
+@Html.PagedListPager(((IPagedList<TokenOders>)Model), page => Url.Action("TokenOrders", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

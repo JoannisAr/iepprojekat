@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IepTestContext-Web.config Connection String" description="IepTestContext Connection String used in web.config by the application to access the database." defaultValue="data source=LAPTOP-DH3CRPUD;initial catalog=IEP;user id=sa;password=test123;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\ioann\\source\\repos\\IepProject0\\IepProject0\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='IepTestContext']/@connectionString" />
+  </parameter>
+</parameters>

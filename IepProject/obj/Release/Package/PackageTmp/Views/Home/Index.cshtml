@@ -1,0 +1,67 @@
+﻿@model IepProject0.Models.AuctionViewModelForm
+@{
+    ViewBag.Title = "Home Page";
+    // TODO PROMENITI IZGLED.
+}
+<div class="jumbotron">
+    @using (Html.BeginForm("Index", "Auction", FormMethod.Get))
+    {
+        @Html.AntiForgeryToken()
+
+        <table cellpadding="7" cellspacing="0">
+            <tr>
+                <td> @Html.DisplayNameFor(w => w.Name) </td>
+                <td> @Html.DisplayNameFor(w => w.LowPrice) </td>
+                <td> @Html.DisplayNameFor(w => w.HighPrice) </td>
+                <td> @Html.DisplayNameFor(w => w.List)</td>
+
+            </tr>
+            <tr>
+                <td> @Html.TextBoxFor(w => w.Name, new { @class = "form-control" })</td>
+                <td>
+                    @Html.EditorFor(w => w.LowPrice, new { @class = "form-control" })
+
+                </td>
+                <td>
+                    @Html.EditorFor(w => w.HighPrice, new { @class = "form-control" })
+                </td>
+
+                @{
+                    List<SelectListItem> roleList = new List<SelectListItem>();
+
+                    roleList.Add(new SelectListItem
+                    {
+                        Text = "",
+                        Value = "",
+                    });
+                    roleList.Add(new SelectListItem
+                    {
+                        Text = "READY",
+                        Value = "READY",
+                    });
+                    roleList.Add(new SelectListItem
+                    {
+                        Text = "OPENED",
+                        Value = "OPENED",
+                    });
+                    roleList.Add(new SelectListItem
+                    {
+                        Text = "COMPLETED",
+                        Value = "COMPLETED",
+                    });
+                }
+                <td>
+                    @Html.DropDownListFor(w => w.List, new SelectList(roleList, "Text", "Value"), new { @class = "form-control" })
+                </td>
+                <td> <input type="submit" value="Search" class="btn btn-default" /> </td>
+            </tr>
+        </table>
+        @Html.ValidationMessageFor(model => model.LowPrice, "", new { @class = "text-danger" })
+        <br />
+        @Html.ValidationMessageFor(model => model.HighPrice, "", new { @class = "text-danger" })
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

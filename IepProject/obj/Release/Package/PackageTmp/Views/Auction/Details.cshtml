@@ -1,0 +1,182 @@
+﻿@model IepProject0.Models.Auction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Auction</h4>
+    <hr />
+    @if (Model.IMG != null)
+    {
+        string imreBase64Data = Convert.ToBase64String(Model.IMG);
+        string imgSrc = string.Format("data:image/png;base64,{0}", imreBase64Data);
+        <img class="card-img-top" src="@imgSrc" alt="" height="200" width="250">
+
+    }
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Remaining Time
+        </dt>
+
+        <dd>
+            <span id="timer @Model.Id"></span>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuctionTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuctionTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompletedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompletedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentPrice)
+        </dt>
+
+        <dd>
+            <span id="curprice @Model.Id">@Model.CurrentPrice</span>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Currency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            <span id="status @Model.Id">@Model.Status</span>
+        </dd>
+
+        <dt>
+            Created By
+        </dt>
+
+        <dd>
+            @ViewBag.CreatedBy
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            <span id="fullname @Model.Id">@Model.FullName</span>
+        </dd>
+    </dl>
+    <h4>Bids:</h4>
+    <table class="table">
+        <tr>
+            <th>
+                Bidder
+            </th>
+            <th>
+                Offered Tokens
+            </th>
+            <th>
+                Time
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var bid in Model.Bids)
+        {
+            <tr>
+                <td>
+                    @bid.User.FirstName @bid.User.LastName
+                </td>
+                <td>
+                    @Html.DisplayFor(model => bid.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => bid.BidOn)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+@section scripts {
+    <script>
+        $.connection.hub.start();
+
+        $.connection.auctionHub.client.AuctionUpdate = function (idAuction, tokensNum, fullName) {
+            document.getElementById("fullname " + idAuction).innerHTML = fullName;
+            document.getElementById("curprice " + idAuction).innerHTML = tokensNum;
+        }
+            var x = setInterval(function () {
+                var localTime = new Date();
+                var year = @(((DateTime)Model.OpenedOn).AddSeconds(Model.AuctionTime).Year);
+                var month =@(((DateTime)Model.OpenedOn).AddSeconds(Model.AuctionTime).Month);
+                var day = @(((DateTime)Model.OpenedOn).AddSeconds(Model.AuctionTime).Day);
+                var hour = @(((DateTime)Model.OpenedOn).AddSeconds(Model.AuctionTime).Hour);
+                var minute = @(((DateTime)Model.OpenedOn).AddSeconds(Model.AuctionTime).Minute);
+                var second = @(((DateTime)Model.OpenedOn).AddSeconds(Model.AuctionTime).Second);
+                var time = new Date(year,month-1,day,hour,minute,second,0);
+                var now = new Date(localTime.getUTCFullYear(), localTime.getUTCMonth(), localTime.getUTCDate(),
+                    localTime.getUTCHours(), localTime.getUTCMinutes(), localTime.getUTCSeconds(), localTime.getUTCMilliseconds());
+                var distance = time.getTime() - now.getTime();
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("timer " + @Model.Id).innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("timer " +  @Model.Id).innerHTML = "";
+                    document.getElementById("status " +  @Model.Id).innerHTML = "COMPLETED"
+                    $.connection.auctionHub.server.closeAuction(@Model.Id);
+                }
+            }, 1000);
+    </script>
+}

@@ -1,0 +1,71 @@
+INFO  2018-08-27 14:03:31,703  8872ms UserController         Login              - Register user jans@gmail.com
+INFO  2018-08-27 14:03:39,117 16286ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-27 17:39:41,077 120692ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-27 17:45:18,307 41833ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-27 17:48:03,021 206548ms UserController         MoveNext           - Successful bid  by 10 on 5
+INFO  2018-08-27 17:54:18,915 36013ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-27 17:55:15,222 92320ms UserController         Login              - Register user tdora@gmail.com
+INFO  2018-08-27 17:55:25,821 102919ms UserController         Login              - Register user tdora@gmail.com
+INFO  2018-08-27 17:55:36,023 113121ms UserController         Login              - Register user tdora@gmail.com
+INFO  2018-08-27 17:55:41,321 118419ms UserController         Login              - Register user tdora@gmail.com
+INFO  2018-08-27 17:55:44,766 121864ms UserController         Login              - Register user tdora@gmail.com
+INFO  2018-08-27 17:56:32,601 169699ms UserController         Login              - Register user test@gmail.com
+INFO  2018-08-27 17:58:41,665 298763ms UserController         MoveNext           - Successful bid  by 10 on 5
+INFO  2018-08-27 18:05:40,235 94723ms UserController         Login              - Register user test@gmail.com
+INFO  2018-08-27 18:05:45,290 99779ms UserController         Login              - Register user test@gmail.com
+INFO  2018-08-27 18:05:55,160 109648ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-27 18:06:30,614 145102ms UserController         MoveNext           - Successful bid  by 10 on 5
+INFO  2018-08-27 18:19:57,267 34920ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-27 18:20:28,272 65925ms UserController         Login              - Register user test@gmail.com
+INFO  2018-08-27 18:32:15,743 10700ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-27 18:45:41,442 17609ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-27 18:46:01,162 37329ms UserController         Login              - Register user test@gmail.com
+INFO  2018-08-27 18:46:33,050 69217ms UserController         MoveNext           - Successful bid  by 10 on 5
+INFO  2018-08-27 18:47:20,332 116499ms UserController         MoveNext           - Successful bid  by 10 on 5
+INFO  2018-08-28 14:01:53,436 61586ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-28 14:02:26,815 94965ms UserController         Login              - Register user test@gmail.com
+INFO  2018-08-28 14:02:38,908 107059ms UserController         MoveNext           - Successful bid  by 10 on 5
+INFO  2018-08-28 14:06:58,379 31854ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-28 14:07:15,238 48713ms UserController         Login              - Register user test@gmail.com
+INFO  2018-08-28 14:07:54,859 88334ms UserController         MoveNext           - Successful bid  by 10 on 3
+INFO  2018-08-28 14:09:04,798 158272ms UserController         MoveNext           - Successful bid  by 10 on 5
+INFO  2018-08-28 14:33:34,395 121949ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-28 14:33:39,644 127199ms UserController         MoveNext           - Successful bid  by 10 on 3
+INFO  2018-08-28 14:33:58,831 146385ms UserController         Login              - Register user test@gmail.com
+INFO  2018-08-28 17:06:25,974 85826ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-28 17:08:34,088 213939ms UserController         MoveNext           - Successful bid  by 10 on 1
+INFO  2018-08-28 17:08:42,439 222290ms UserController         MoveNext           - Successful bid  by 10 on 1
+INFO  2018-08-28 17:08:50,360 230211ms UserController         MoveNext           - Successful bid  by 10 on 1
+INFO  2018-08-28 23:57:29,526 36735ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-28 23:57:36,259 43468ms UserController         Login              - Register user test@gmail.com
+INFO  2018-08-28 23:59:23,751 150960ms UserController         MoveNext           - Successful bid  by 12 on 3
+INFO  2018-08-29 17:37:46,198 92699ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-29 18:58:37,042  9819ms UserController         Login              - Register user jans4@gmail.com
+INFO  2018-08-29 19:01:05,387 158164ms UserController         MoveNext           - Successful bid  by 10 on 3
+INFO  2018-08-29 19:01:40,548 193325ms UserController         MoveNext           - Successful bid  by 10 on 3
+INFO  2018-09-28 18:28:50,044 11309ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 18:28:53,354 14619ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 18:29:46,110 67375ms AuctionController      AuctionClose       - Closed Auction Name : television2
+INFO  2018-09-28 19:00:28,560  1916ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 20:18:36,783 46320ms UserController         Login              - Logged User : 10
+INFO  2018-09-28 20:19:58,505 128042ms UserController         Register           - Register User : ioannis@gmail.com
+INFO  2018-09-28 20:20:02,719 132257ms UserController         Login              - Logged User : 10
+INFO  2018-09-28 20:20:24,421 153959ms AuctionController      Create             - Created Auction Name: xxxx Price : 12 Time: 120
+INFO  2018-09-28 20:20:24,576 154114ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 20:20:41,776 171313ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 20:20:55,395 184933ms UserController         Login              - Failed to log for  User : joannis@gmail.com
+INFO  2018-09-28 20:21:03,014 192551ms UserController         Login              - Logged User : 13
+INFO  2018-09-28 20:21:08,210 197748ms AuctionController      OpenAuctions       - Opened Auction Name : xxxx
+INFO  2018-09-28 20:21:14,917 204455ms AuctionController      Index              - Search Name :  Status : OPENED
+INFO  2018-09-28 20:23:13,579 323117ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 20:24:58,692 428230ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 20:43:04,721 1514258ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 20:45:13,883 12044ms UserController         Login              - Logged User : 10
+INFO  2018-09-28 20:45:29,528 27689ms AuctionController      Create             - Created Auction Name: xxxx Price : 1 Time: 60
+INFO  2018-09-28 20:45:29,809 27970ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 20:45:43,322 41482ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 20:45:54,418 52579ms UserController         Login              - Logged User : 13
+INFO  2018-09-28 20:45:58,490 56651ms AuctionController      OpenAuctions       - Opened Auction Name : xxxx
+INFO  2018-09-28 20:46:02,280 60441ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 20:49:21,365  2517ms AuctionController      Index              - Search Name :  Status : 
+INFO  2018-09-28 20:50:42,483 83634ms AuctionController      AuctionClose       - Closed Auction Name : xxxx
